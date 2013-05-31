@@ -5,7 +5,6 @@ Block::Block(void) {
 
 }
 
-
 Block::~Block(void) {
 }
 
