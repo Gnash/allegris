@@ -1,0 +1,74 @@
+﻿Der Buildvorgang wurde am 6/19/2012 11:45:04 PM gestartet.
+     1>Projekt "F:\Dropbox\Dropbox\Code\C++\Allegris 2\Allegris 2\Allegris 2.vcxproj" auf Knoten "2", build Ziel(e).
+     1>InitializeBuildStatus:
+         Aktualisieren des Timestamps von "Release\Allegris 2.unsuccessfulbuild".
+       ClCompile:
+         d:\Programme\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Ic:\allegro\include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Allegris.cpp Block.cpp BlockFactory.cpp BlockLine.cpp BlockPart.cpp BlockPartGraphics.cpp Block_I.cpp Block_L.cpp Block_L_Mirrored.cpp Block_O.cpp Block_S.cpp Block_S_Mirrored.cpp Block_T.cpp Coordinate.cpp Game.cpp GameMenu.cpp GameObject.cpp GameState.cpp GameWindow.cpp GraphicsComponent.cpp HighScore.cpp Main.cpp ObjectComponent.cpp Player.cpp PlayingField.cpp
+         Allegris.cpp
+         Block.cpp
+         BlockFactory.cpp
+         BlockLine.cpp
+         BlockPart.cpp
+         BlockPartGraphics.cpp
+         Block_I.cpp
+         Block_L.cpp
+         Block_L_Mirrored.cpp
+         Block_O.cpp
+         Block_S.cpp
+         Block_S_Mirrored.cpp
+         Block_T.cpp
+         Coordinate.cpp
+         Game.cpp
+         GameMenu.cpp
+         GameObject.cpp
+         GameState.cpp
+         GameWindow.cpp
+         GraphicsComponent.cpp
+         Kompilieren...
+         HighScore.cpp
+         Main.cpp
+         ObjectComponent.cpp
+         Player.cpp
+         PlayingField.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /l"0x0409" /nologo /fo"Release\Allegris 2.res" "Allegris 2.rc" 
+       Link:
+         d:\Programme\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Dropbox\Dropbox\Code\C++\Allegris 2\Release\Allegris 2.exe" /NOLOGO /LIBPATH:c:\allegro\lib "allegro-5.0.6-monolith-md.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Allegris 2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\Dropbox\Dropbox\Code\C++\Allegris 2\Release\Allegris 2.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Dropbox\Dropbox\Code\C++\Allegris 2\Release\Allegris 2.lib" /MACHINE:X86 "Release\Allegris 2.res"
+         Release\Allegris.obj
+         Release\Block.obj
+         Release\BlockFactory.obj
+         Release\BlockLine.obj
+         Release\BlockPart.obj
+         Release\BlockPartGraphics.obj
+         Release\Block_I.obj
+         Release\Block_L.obj
+         Release\Block_L_Mirrored.obj
+         Release\Block_O.obj
+         Release\Block_S.obj
+         Release\Block_S_Mirrored.obj
+         Release\Block_T.obj
+         Release\Coordinate.obj
+         Release\Game.obj
+         Release\GameMenu.obj
+         Release\GameObject.obj
+         Release\GameState.obj
+         Release\GameWindow.obj
+         Release\GraphicsComponent.obj
+         Release\HighScore.obj
+         Release\Main.obj
+         Release\ObjectComponent.obj
+         Release\Player.obj
+         Release\PlayingField.obj
+         Code wird generiert.
+         Codegenerierung ist abgeschlossen.
+         Allegris 2.vcxproj -> F:\Dropbox\Dropbox\Code\C++\Allegris 2\Release\Allegris 2.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\Dropbox\Dropbox\Code\C++\Allegris 2\Release\Allegris 2.exe;#1" /manifest "Release\Allegris 2.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Die Datei "Release\Allegris 2.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Release\Allegris 2.lastbuildstate".
+     1>Die Erstellung des Projekts "F:\Dropbox\Dropbox\Code\C++\Allegris 2\Allegris 2\Allegris 2.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:38.22
