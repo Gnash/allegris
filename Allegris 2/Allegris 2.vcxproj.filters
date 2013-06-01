@@ -114,6 +114,12 @@
     <ClInclude Include="BlockPartGraphics_Magenta.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="PreviewWindow.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewWindowGraphics.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Allegris 2.rc">
@@ -212,6 +218,12 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="BlockPartGraphics_Magenta.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewWindow.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewWindowGraphics.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

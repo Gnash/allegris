@@ -5,6 +5,7 @@
 #include "BlockLine.h"
 #include "PlayingField.h"
 #include "globals.h"
+#include "PreviewWindow.h"
 #include <allegro5/allegro.h>
 
 
@@ -28,6 +29,7 @@ private:
 	int getCompletedLines(void);
 	int getCurrentDirection(void);
 	int getBlockMovesPerSecond(void);
+	PreviewWindow* getPreviewWindow(void);
 	ALLEGRO_EVENT_QUEUE* getEventQueue(void);
 	ALLEGRO_TIMER* getBlockDropTimer(void);
 	ALLEGRO_TIMER* getBlockInputTimer(void);
@@ -41,6 +43,7 @@ private:
 	Block* activeBlock;
 	BlockFactory* blockFactory;
 	PlayingField* playingField;
+	PreviewWindow* previewWindow;
 	ALLEGRO_EVENT_QUEUE *evQueue;
 	ALLEGRO_TIMER *blockDropTimer;
 	ALLEGRO_TIMER *blockInputTimer;

@@ -8,6 +8,7 @@ GameWindow::GameWindow(void) {
 	this->blockMovesPerSecond = 1;
 	this->evQueue = al_create_event_queue();
 	this->playingField = new PlayingField(0, 0);
+	this->previewWindow = new PreviewWindow(PREVIEW_WINDOW_X, PREVIEW_WINDOW_Y);
 	this->blockMovingDown = false;
 	this->blockFactory = new BlockFactory();
 	createNewBlock();
@@ -23,6 +24,7 @@ GameWindow::GameWindow(void) {
 GameWindow::~GameWindow(void) {
 	delete this->activeBlock;
 	delete this->playingField;
+	delete this->previewWindow;
 	al_destroy_event_queue(evQueue);
 	al_destroy_timer(getBlockDropTimer());
 }
@@ -30,7 +32,7 @@ GameWindow::~GameWindow(void) {
 
 bool GameWindow::updateGraphic(void) {
 	getPlayingField()->draw();
-	return this->activeBlock->draw();
+	return (this->activeBlock->draw() && previewWindow->draw());
 }
 
 bool GameWindow::updateLogic(void) {
@@ -76,7 +78,20 @@ void GameWindow::createNewBlock(void) {
 	if (this->activeBlock) {
 		delete this->activeBlock;
 	}
-	this->activeBlock = blockFactory->createRandomBlock();
+	if (getPreviewWindow()->getNextBlock()) {
+		this->activeBlock = getPreviewWindow()->getNextBlock();
+		this->activeBlock->setParent(getPlayingField());
+		this->activeBlock->setRelativeCoordinate(BLOCK_SPAWN_X, BLOCK_SPAWN_Y);
+
+	} else {
+		this->activeBlock = blockFactory->createRandomBlock();
+	}
+	Block* nextBlock = blockFactory->createRandomBlock();
+	nextBlock->setParent(previewWindow);
+	nextBlock->setRelativeCoordinate(floor((PREVIEW_WINDOW_WIDTH - nextBlock->getWidth() * BLOCK_WIDTH) / 2), floor(((PREVIEW_WINDOW_HEIGHT - nextBlock->getHeight() * BLOCK_HEIGHT) / 2)));
+	int bla = nextBlock->getAbsoluteXPos();
+	int blubb = nextBlock->getAbsoluteYPos();
+	getPreviewWindow()->setNextBlock(nextBlock);
 	this->activeBlock->setPlayingField(getPlayingField());
 }
 
@@ -156,4 +171,8 @@ void GameWindow::increaseLevel(void) {
 	this->level++;
 	cout << "New level: " << this->level << endl;
 	createNewBlockTimer();
+}
+
+PreviewWindow* GameWindow::getPreviewWindow(void) {
+	return this->previewWindow;
 }
