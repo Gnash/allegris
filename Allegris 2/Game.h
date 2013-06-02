@@ -1,6 +1,6 @@
 #pragma once
 #include "GameState.h"
-#include <allegro5/allegro5.h>
+#include <allegro5/allegro.h>
 #include "GameWindow.h"
 #include "GameMenu.h"
 #include "HighScore.h"
@@ -19,6 +19,9 @@ public:
 	GameState* getCurrentState(void);
 	
 private:
+	ALLEGRO_EVENT_QUEUE* getEventQueue(void);
+
 	GameState *currentState;
+	ALLEGRO_EVENT_QUEUE *evQueue;
 };
 

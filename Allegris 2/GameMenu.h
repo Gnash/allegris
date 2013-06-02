@@ -6,5 +6,8 @@ class GameMenu:
 public:
 	GameMenu(void);
 	~GameMenu(void);
+
+	bool updateLogic(void);
+	bool updateGraphic(void);
 };
 

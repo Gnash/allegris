@@ -23,8 +23,10 @@ private:
 	void createNewBlockTimer(void);
 	void createNewBlock(void);
 	void dropBlock(void);
+	bool isSpawnBlocked(void);
 	
 	Block* getActiveBlock(void);
+	int getPoints(void);
 	int getCurrentLevel(void);
 	int getCompletedLines(void);
 	int getCurrentDirection(void);
@@ -39,6 +41,8 @@ private:
 	void setBlockMovingDown(bool moving);
 	void increaseCompletedLines(int amount);
 	void increaseLevel(void);
+	void increasePoints(int amount, int currentLevel);
+	void emitGameLostEvent(void);
 
 	Block* activeBlock;
 	BlockFactory* blockFactory;
@@ -49,6 +53,7 @@ private:
 	ALLEGRO_TIMER *blockInputTimer;
 	
 	int level;
+	int points;
 	int completedLines;
 	int currentDirection;
 	int blockMovesPerSecond;

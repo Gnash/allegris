@@ -1,45 +1,16 @@
-﻿Der Buildvorgang wurde am 30.05.2013 00:21:49 gestartet.
+﻿Der Buildvorgang wurde am 02.06.2013 21:03:35 gestartet.
      1>Projekt "F:\Code\C++\Allegris 2\Allegris 2\Allegris 2.vcxproj" auf Knoten "2", Build Ziel(e).
      1>InitializeBuildStatus:
-         Aktualisieren des Timestamps von "Debug\Allegris 2.unsuccessfulbuild".
+         "Debug\Allegris 2.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
        ClCompile:
-         D:\Programme\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Ic:/allegro/include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Allegris.cpp Block.cpp BlockFactory.cpp BlockLine.cpp BlockPart.cpp BlockPartGraphics.cpp BlockPartGraphics_Blue.cpp BlockPartGraphics_Cyan.cpp BlockPartGraphics_Green.cpp BlockPartGraphics_Magenta.cpp BlockPartGraphics_Red.cpp BlockPartGraphics_Yellow.cpp Block_I.cpp Block_L.cpp Block_L_Mirrored.cpp Block_O.cpp Block_S.cpp Block_S_Mirrored.cpp Block_T.cpp Coordinate.cpp Game.cpp GameMenu.cpp GameObject.cpp GameState.cpp GameWindow.cpp GraphicsComponent.cpp HighScore.cpp Main.cpp ObjectComponent.cpp Player.cpp PlayingField.cpp
-         PlayingField.cpp
-         Player.cpp
-         ObjectComponent.cpp
-         Main.cpp
-         HighScore.cpp
-         GraphicsComponent.cpp
-         GameWindow.cpp
-         GameState.cpp
-         GameObject.cpp
-         GameMenu.cpp
-         Game.cpp
-         Coordinate.cpp
-         Block_T.cpp
-         Block_S_Mirrored.cpp
-         Block_S.cpp
-         Block_O.cpp
-         Block_L_Mirrored.cpp
-         Block_L.cpp
-         Block_I.cpp
-         BlockPartGraphics_Yellow.cpp
-         Code wird generiert...
-         Kompilieren...
-         BlockPartGraphics_Red.cpp
-         BlockPartGraphics_Magenta.cpp
-         BlockPartGraphics_Green.cpp
-         BlockPartGraphics_Cyan.cpp
-         BlockPartGraphics_Blue.cpp
-         BlockPartGraphics.cpp
-         BlockPart.cpp
-         BlockLine.cpp
-         BlockFactory.cpp
-         Block.cpp
+         D:\Programme\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Ic:/allegro/include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Allegris.cpp Game.cpp HighScore.cpp
+     1>cl : Befehlszeile warning D9028: Fehler beim minimalen Neukompilieren, normale Erstellung wird durchgeführt.
          Allegris.cpp
+         Game.cpp
+         HighScore.cpp
          Code wird generiert...
        ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\Allegris 2.res" "Allegris 2.rc" 
+         Alle Ausgaben sind aktuell.
        Link:
          D:\Programme\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Code\C++\Allegris 2\Debug\Allegris 2.exe" /INCREMENTAL /NOLOGO /LIBPATH:c:/allegro/lib "allegro-5.0.6-monolith-md-debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Code\C++\Allegris 2\Debug\Allegris 2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Code\C++\Allegris 2\Debug\Allegris 2.lib" /MACHINE:X86 "Debug\Allegris 2.res"
          Debug\Allegris.obj
@@ -73,9 +44,14 @@
          Debug\ObjectComponent.obj
          Debug\Player.obj
          Debug\PlayingField.obj
-     1>LINK : fatal error LNK1207: Inkompatibles PDB-Format in "F:\Code\C++\Allegris 2\Debug\Allegris 2.pdb''; Löschen und neu erstellen.
-     1>Die Erstellung des Projekts "F:\Code\C++\Allegris 2\Allegris 2\Allegris 2.vcxproj" ist abgeschlossen, Build Ziel(e) -- FEHLER.
+         Debug\PreviewWindow.obj
+         Debug\PreviewWindowGraphics.obj
+         Allegris 2.vcxproj -> F:\Code\C++\Allegris 2\Debug\Allegris 2.exe
+       FinalizeBuildStatus:
+         Die Datei "Debug\Allegris 2.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\Allegris 2.lastbuildstate".
+     1>Die Erstellung des Projekts "F:\Code\C++\Allegris 2\Allegris 2\Allegris 2.vcxproj" ist abgeschlossen, Build Ziel(e).
 
-Fehler beim Buildvorgang.
+Build erfolgreich.
 
-Verstrichene Zeit 00:00:54.95
+Verstrichene Zeit 00:00:04.36

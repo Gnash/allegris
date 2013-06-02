@@ -5,6 +5,10 @@ class HighScore :
 {
 public:
 	HighScore(void);
+	HighScore(int points);
 	~HighScore(void);
+
+	bool updateGraphic(void);
+	bool updateLogic(void);
 };
 

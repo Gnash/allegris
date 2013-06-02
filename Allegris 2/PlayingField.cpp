@@ -71,11 +71,15 @@ void PlayingField::removeCompleteLines(void) {
 		createBlockLine(i);
 	}
 	if (count > 0) {
-		ALLEGRO_EVENT ev;
-		ev.user.data1 = count;
-		ev.type = ALLEGRO_GET_EVENT_TYPE('l', 'i', 'n', 'e');
-		al_emit_user_event(getEventSource(), &ev, 0);
+		emitLineCompleteEvent(count);
 	}
+}
+
+void PlayingField::emitLineCompleteEvent(int amountOfLines) {
+	ALLEGRO_EVENT ev;
+	ev.user.data1 = amountOfLines;
+	ev.type = ALLEGRO_GET_EVENT_TYPE('l', 'i', 'n', 'e');
+	al_emit_user_event(getEventSource(), &ev, 0);
 }
 
 void PlayingField::dropLinesBetweenIndices(int startIndex, int endIndex) {

@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\Blocks">
+      <UniqueIdentifier>{aa547216-64de-4e1b-ab47-b12022f564fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\GameStates">
+      <UniqueIdentifier>{2effc5dd-675d-497a-917f-a49d6dca4674}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -30,15 +36,6 @@
     <ClInclude Include="GameObject.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockLine.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPart.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Coordinate.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -48,70 +45,13 @@
     <ClInclude Include="Game.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="GameMenu.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="HighScore.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="ObjectComponent.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPartGraphics.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="GraphicsComponent.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="GameWindow.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Block_L.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockFactory.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="PlayingField.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Block_O.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Block_L_Mirrored.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Block_S.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Block_S_Mirrored.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Block_I.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Block_T.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPartGraphics_Red.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPartGraphics_Blue.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPartGraphics_Green.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPartGraphics_Yellow.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPartGraphics_Cyan.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockPartGraphics_Magenta.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="PreviewWindow.h">
@@ -119,6 +59,72 @@
     </ClInclude>
     <ClInclude Include="PreviewWindowGraphics.h">
       <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPartGraphics_Yellow.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_I.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_L.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_L_Mirrored.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_O.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_S.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_S_Mirrored.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_T.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockFactory.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockLine.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPart.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPartGraphics.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPartGraphics_Blue.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPartGraphics_Cyan.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPartGraphics_Green.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPartGraphics_Magenta.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPartGraphics_Red.h">
+      <Filter>Headerdateien\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMenu.h">
+      <Filter>Headerdateien\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Headerdateien\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Headerdateien\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="HighScore.h">
+      <Filter>Headerdateien\GameStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

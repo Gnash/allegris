@@ -38,6 +38,9 @@ const int BLOCK_SPAWN_Y = 0;
 
 const int LINES_FOR_LEVELUP = 10;
 
+const int POINTS_AMOUNT_BASE = 2;
+const int POINTS_LEVEL_BASE = 2;
+
 const int RED = 0;
 const int BLUE = 1;
 const int GREEN = 2;

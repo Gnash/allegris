@@ -29,6 +29,7 @@ private:
 	void createEventSource(void);
 	void dropLinesBetweenIndices(int startIndex, int endIndex);
 	void dropLine(int index);
+	void emitLineCompleteEvent(int amountOfLines);
 
 	BlockLine* blockLines[GAME_FIELD_HEIGHT];
 	ALLEGRO_EVENT_SOURCE evSource;

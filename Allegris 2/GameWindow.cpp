@@ -41,8 +41,7 @@ bool GameWindow::updateLogic(void) {
 		al_wait_for_event(evQueue, &ev);
 		if (ev.type == ALLEGRO_GET_EVENT_TYPE('l', 'i', 'n', 'e')) {
 			increaseCompletedLines(ev.user.data1);
-		}
-		if (ev.type == ALLEGRO_EVENT_TIMER) {
+		} else if (ev.type == ALLEGRO_EVENT_TIMER) {
 			if (ev.any.source == al_get_timer_event_source(getBlockDropTimer()) && 
 				!isBlockMovingDown()) {
 				dropBlock();
@@ -75,6 +74,9 @@ bool GameWindow::updateLogic(void) {
 }
 
 void GameWindow::createNewBlock(void) {
+	if (isSpawnBlocked()) {
+		emitGameLostEvent();
+	}
 	if (this->activeBlock) {
 		delete this->activeBlock;
 	}
@@ -93,6 +95,13 @@ void GameWindow::createNewBlock(void) {
 	int blubb = nextBlock->getAbsoluteYPos();
 	getPreviewWindow()->setNextBlock(nextBlock);
 	this->activeBlock->setPlayingField(getPlayingField());
+}
+
+void GameWindow::emitGameLostEvent(void) {
+	ALLEGRO_EVENT ev;
+	ev.user.data1 = getPoints();
+	ev.type = ALLEGRO_GET_EVENT_TYPE('l', 'o', 's', 't');
+	al_emit_user_event(getEventSource(), &ev, 0);
 }
 
 void GameWindow::dropBlock(void) {
@@ -159,12 +168,17 @@ void GameWindow::setBlockMovingDown(bool moving) {
 }
 
 void GameWindow::increaseCompletedLines(int amount) {
+	increasePoints(amount, getCurrentLevel());
 	this->completedLines += amount;
 	while (this->completedLines >= LINES_FOR_LEVELUP) {
 		increaseLevel();
 		this->completedLines -= LINES_FOR_LEVELUP;
 	}
 	cout << "Lines: " << this->completedLines << endl;
+}
+
+void GameWindow::increasePoints(int amount, int currentLevel) {
+	this->points = points + pow(POINTS_AMOUNT_BASE, amount) * pow(POINTS_LEVEL_BASE, currentLevel);
 }
 
 void GameWindow::increaseLevel(void) {
@@ -175,4 +189,12 @@ void GameWindow::increaseLevel(void) {
 
 PreviewWindow* GameWindow::getPreviewWindow(void) {
 	return this->previewWindow;
+}
+
+bool GameWindow::isSpawnBlocked(void) {
+	return getPlayingField()->isBlocked(BLOCK_SPAWN_X, 0);
+}
+
+int GameWindow::getPoints(void) {
+	return this->points;
 }
