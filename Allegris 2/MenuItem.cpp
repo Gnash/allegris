@@ -11,9 +11,7 @@ MenuItem::MenuItem(GameObject* parentList, string text, int index) {
 	this->active = false;
 	setParent(parentList);
 	setRelativeCoord(new Coordinate(0, index * MENU_ITEM_HEIGHT));
-	al_init_font_addon();
-	al_init_ttf_addon();
-	font = al_load_ttf_font("font/VideoTerminalScreen.ttf",30,0 );
+	font = FontHandler::getFont(FONT_INDEX_MAINMENU);
 }
 
 MenuItem::~MenuItem(void)

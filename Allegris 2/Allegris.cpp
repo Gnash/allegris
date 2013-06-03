@@ -49,6 +49,7 @@ int main(int argc, char **argv)
    }
  
 	BitmapHandler::destroyBitmaps();
+	FontHandler::destroyFonts();
 	al_destroy_timer(logicsTimer);
 	al_destroy_timer(graphicsTimer);
 	al_destroy_display(display);
@@ -65,7 +66,10 @@ bool init() {
 	al_init();
 	al_init_image_addon();
 	al_install_keyboard();
+	al_init_font_addon();
+	al_init_ttf_addon();
 	BitmapHandler::loadBitmaps();
+	FontHandler::loadFonts();
  
    display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
    if(!display) {

@@ -91,6 +91,7 @@
     <ClInclude Include="Block_S_Mirrored.h" />
     <ClInclude Include="Block_T.h" />
     <ClInclude Include="Coordinate.h" />
+    <ClInclude Include="FontHandler.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="GameObject.h" />
@@ -99,6 +100,10 @@
     <ClInclude Include="globals.h" />
     <ClInclude Include="GraphicsComponent.h" />
     <ClInclude Include="HighScore.h" />
+    <ClInclude Include="HighScoreList.h" />
+    <ClInclude Include="HighScoreListEntry.h" />
+    <ClInclude Include="HighScoreListName.h" />
+    <ClInclude Include="HighScoreListPoints.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="MenuItemList.h" />
@@ -134,6 +139,7 @@
     <ClCompile Include="Block_S_Mirrored.cpp" />
     <ClCompile Include="Block_T.cpp" />
     <ClCompile Include="Coordinate.cpp" />
+    <ClCompile Include="FontHandler.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -141,6 +147,10 @@
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="GraphicsComponent.cpp" />
     <ClCompile Include="HighScore.cpp" />
+    <ClCompile Include="HighScoreList.cpp" />
+    <ClCompile Include="HighScoreListEntry.cpp" />
+    <ClCompile Include="HighScoreListName.cpp" />
+    <ClCompile Include="HighScoreListPoints.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="MenuItemList.cpp" />

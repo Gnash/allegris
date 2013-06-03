@@ -12,6 +12,9 @@ const int BITMAP_INDEX_BLOCK_RED = 5;
 const int BITMAP_INDEX_BLOCK_YELLOW = 6;
 const int BITMAP_INDEX_BLOCK_PREVIEWWINDOW = 7;
 
+const int FONT_INDEX_MAINMENU = 0;
+const int FONT_INDEX_HIGHSCORE = 0;
+
 const int BLOCK_WIDTH = 30;
 const int BLOCK_HEIGHT = 30;
 
