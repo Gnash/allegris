@@ -6,7 +6,6 @@ GameWindow::GameWindow(void) {
 	this->activeBlock = 0;
 	this->level = 1;
 	this->blockMovesPerSecond = 1;
-	this->evQueue = al_create_event_queue();
 	this->playingField = new PlayingField(0, 0);
 	this->previewWindow = new PreviewWindow(PREVIEW_WINDOW_X, PREVIEW_WINDOW_Y);
 	this->blockMovingDown = false;
@@ -14,10 +13,10 @@ GameWindow::GameWindow(void) {
 	createNewBlock();
 	createNewBlockTimer();
 	setBlockInputTimer(al_create_timer(1.0 / DROP_SPEED));
-	al_register_event_source(evQueue, getPlayingField()->getEventSource());
-	al_register_event_source(evQueue, al_get_timer_event_source(getBlockDropTimer()));
-	al_register_event_source(evQueue, al_get_timer_event_source(getBlockInputTimer()));
-	al_register_event_source(evQueue, al_get_keyboard_event_source());
+	al_register_event_source(getEventQueue(), getPlayingField()->getEventSource());
+	al_register_event_source(getEventQueue(), al_get_timer_event_source(getBlockDropTimer()));
+	al_register_event_source(getEventQueue(), al_get_timer_event_source(getBlockInputTimer()));
+	al_register_event_source(getEventQueue(), al_get_keyboard_event_source());
 }
 
 
@@ -25,7 +24,6 @@ GameWindow::~GameWindow(void) {
 	delete this->activeBlock;
 	delete this->playingField;
 	delete this->previewWindow;
-	al_destroy_event_queue(evQueue);
 	al_destroy_timer(getBlockDropTimer());
 }
 
@@ -37,8 +35,8 @@ bool GameWindow::updateGraphic(void) {
 
 bool GameWindow::updateLogic(void) {
 	ALLEGRO_EVENT ev;
-	while (!al_event_queue_is_empty(evQueue)) {
-		al_wait_for_event(evQueue, &ev);
+	while (!al_event_queue_is_empty(getEventQueue())) {
+		al_wait_for_event(getEventQueue(), &ev);
 		if (ev.type == ALLEGRO_GET_EVENT_TYPE('l', 'i', 'n', 'e')) {
 			increaseCompletedLines(ev.user.data1);
 		} else if (ev.type == ALLEGRO_EVENT_TIMER) {
@@ -149,18 +147,14 @@ PlayingField* GameWindow::getPlayingField(void) {
 	return this->playingField;
 }
 
-ALLEGRO_EVENT_QUEUE* GameWindow::getEventQueue(void) {
-	return this->evQueue;
-}
-
 bool GameWindow::isBlockMovingDown(void) {
 	return this->blockMovingDown;
 }
 
 void GameWindow::setBlockInputTimer(ALLEGRO_TIMER *timer) {
-	al_unregister_event_source(evQueue, al_get_timer_event_source(getBlockInputTimer()));
+	al_unregister_event_source(getEventQueue(), al_get_timer_event_source(getBlockInputTimer()));
 	this->blockInputTimer = timer;
-	al_register_event_source(evQueue, al_get_timer_event_source(getBlockInputTimer()));
+	al_register_event_source(getEventQueue(), al_get_timer_event_source(getBlockInputTimer()));
 }
 
 void GameWindow::setBlockMovingDown(bool moving) {

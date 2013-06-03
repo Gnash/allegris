@@ -1,7 +1,7 @@
 #pragma once
 #include "globals.h"
 #include "GraphicsComponent.h"
-#include <allegro5/allegro.h>
+//#include "Allegris.h"
 
 using namespace std;
 

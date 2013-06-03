@@ -17,11 +17,14 @@ public:
 
 	void setCurrentState(GameState* state);
 	GameState* getCurrentState(void);
+	ALLEGRO_EVENT_SOURCE* getEventSource(void);
 	
 private:
 	ALLEGRO_EVENT_QUEUE* getEventQueue(void);
+	void emitCloseEvent(void);
 
 	GameState *currentState;
 	ALLEGRO_EVENT_QUEUE *evQueue;
+	ALLEGRO_EVENT_SOURCE evSource;
 };
 

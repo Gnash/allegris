@@ -3,13 +3,15 @@ using namespace std;
 
 Game::Game(void){	
 	this->evQueue = al_create_event_queue();
+	al_init_user_event_source(getEventSource());
 	this-> currentState = 0;
-	setCurrentState(new GameWindow());
+	setCurrentState(new GameMenu());
 }
 
 
 Game::~Game(void){
 	al_destroy_event_queue(evQueue);
+	al_destroy_user_event_source(getEventSource());
 	delete currentState;
 }
 
@@ -23,9 +25,19 @@ bool Game::updateLogic(void) {
 		al_wait_for_event(evQueue, &ev);
 		if (ev.type == ALLEGRO_GET_EVENT_TYPE('l', 'o', 's', 't')) {
 			setCurrentState(new HighScore(ev.user.data1));
+		} else if (ev.type == ALLEGRO_GET_EVENT_TYPE('s', 't', 'r', 't')) {
+			setCurrentState(new GameWindow());
+		} else if (ev.type == ALLEGRO_GET_EVENT_TYPE('c', 'l', 'o', 's')) {
+			emitCloseEvent();
 		}
 	}
 	return currentState->updateLogic();
+}
+
+void Game::emitCloseEvent(void) {
+	ALLEGRO_EVENT ev;
+	ev.type = ALLEGRO_GET_EVENT_TYPE('c', 'l', 'o', 's');
+	al_emit_user_event(getEventSource(), &ev, 0);
 }
 
 GameState* Game::getCurrentState(void) {
@@ -43,4 +55,8 @@ void Game::setCurrentState(GameState* state) {
 	}
 	this->currentState = state;
 	al_register_event_source(getEventQueue(), state->getEventSource());
+}
+
+ALLEGRO_EVENT_SOURCE* Game::getEventSource(void) {
+	return &(this->evSource);
 }

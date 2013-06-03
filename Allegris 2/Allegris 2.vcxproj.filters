@@ -126,6 +126,15 @@
     <ClInclude Include="HighScore.h">
       <Filter>Headerdateien\GameStates</Filter>
     </ClInclude>
+    <ClInclude Include="MenuItemList.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuItem.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapHandler.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Allegris 2.rc">
@@ -230,6 +239,15 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="PreviewWindowGraphics.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItemList.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItem.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapHandler.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

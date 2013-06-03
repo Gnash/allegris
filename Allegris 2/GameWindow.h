@@ -32,7 +32,6 @@ private:
 	int getCurrentDirection(void);
 	int getBlockMovesPerSecond(void);
 	PreviewWindow* getPreviewWindow(void);
-	ALLEGRO_EVENT_QUEUE* getEventQueue(void);
 	ALLEGRO_TIMER* getBlockDropTimer(void);
 	ALLEGRO_TIMER* getBlockInputTimer(void);
 	PlayingField* getPlayingField(void);
@@ -48,7 +47,6 @@ private:
 	BlockFactory* blockFactory;
 	PlayingField* playingField;
 	PreviewWindow* previewWindow;
-	ALLEGRO_EVENT_QUEUE *evQueue;
 	ALLEGRO_TIMER *blockDropTimer;
 	ALLEGRO_TIMER *blockInputTimer;
 	

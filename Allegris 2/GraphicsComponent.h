@@ -1,5 +1,6 @@
 #pragma once
 #include "ObjectComponent.h"
+#include "BitmapHandler.h"
 
 class GraphicsComponent :
 	public ObjectComponent

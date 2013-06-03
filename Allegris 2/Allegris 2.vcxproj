@@ -71,6 +71,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Allegris.h" />
+    <ClInclude Include="BitmapHandler.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockFactory.h" />
     <ClInclude Include="BlockLine.h" />
@@ -99,6 +100,8 @@
     <ClInclude Include="GraphicsComponent.h" />
     <ClInclude Include="HighScore.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="MenuItem.h" />
+    <ClInclude Include="MenuItemList.h" />
     <ClInclude Include="ObjectComponent.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayingField.h" />
@@ -111,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Allegris.cpp" />
+    <ClCompile Include="BitmapHandler.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockFactory.cpp" />
     <ClCompile Include="BlockLine.cpp" />
@@ -138,6 +142,8 @@
     <ClCompile Include="GraphicsComponent.cpp" />
     <ClCompile Include="HighScore.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MenuItem.cpp" />
+    <ClCompile Include="MenuItemList.cpp" />
     <ClCompile Include="ObjectComponent.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayingField.cpp" />

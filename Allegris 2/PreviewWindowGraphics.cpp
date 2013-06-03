@@ -7,13 +7,12 @@ PreviewWindowGraphics::PreviewWindowGraphics(void) {
 
 PreviewWindowGraphics::PreviewWindowGraphics(PreviewWindow* previewWindow) {
 	this->previewWindow = previewWindow;
-	this->backgroundImage = al_load_bitmap("img/previewWindow.png");
+	this->backgroundImage = BitmapHandler::getBitmap(BITMAP_INDEX_BLOCK_PREVIEWWINDOW);
 }
 
 
 PreviewWindowGraphics::~PreviewWindowGraphics(void)
 {
-	al_destroy_bitmap(this->backgroundImage);
 }
 
 

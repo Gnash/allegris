@@ -4,6 +4,7 @@
 #include <allegro5/allegro_image.h>
 #include "Game.h"
 #include "globals.h"
+#include "BitmapHandler.h"
 
 class Allegris
 {

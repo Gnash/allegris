@@ -8,6 +8,11 @@ BlockLine::BlockLine(int y) {
 
 
 BlockLine::~BlockLine(void) {
+	for (int i = 0; i < GAME_FIELD_WIDTH; i++) {
+		if (getBlockPart(i)) {
+			delete getBlockPart(i);
+		}
+	}
 }
 
 void BlockLine::draw(void) {

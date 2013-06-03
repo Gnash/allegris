@@ -1,4 +1,5 @@
 #pragma once
+#include "BlockPartGraphics.h"
 class BlockPartGraphics_Blue:
 	public BlockPartGraphics
 {

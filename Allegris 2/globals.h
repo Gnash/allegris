@@ -3,6 +3,15 @@
 
 using namespace std;
 
+const int BITMAP_INDEX_BLOCK_BLUE = 0;
+const int BITMAP_INDEX_BLOCK_CYAN = 1;
+const int BITMAP_INDEX_BLOCK_GREEN = 2;
+const int BITMAP_INDEX_BLOCK_MAGENTA = 3;
+const int BITMAP_INDEX_BLOCK_ORANGE = 4;
+const int BITMAP_INDEX_BLOCK_RED = 5;
+const int BITMAP_INDEX_BLOCK_YELLOW = 6;
+const int BITMAP_INDEX_BLOCK_PREVIEWWINDOW = 7;
+
 const int BLOCK_WIDTH = 30;
 const int BLOCK_HEIGHT = 30;
 
@@ -19,6 +28,11 @@ const int DIRECTION_LEFT = 0;
 const int DIRECTION_RIGHT = 1;
 const int DIRECTION_DOWN = 2;
 const int DIRECTION_UP = 3;
+
+const int MENU_ITEM_HEIGHT = 50;
+
+const int MENU_START = 0;
+const int MENU_END = 1;
 
 const int SCREEN_WIDTH = GAME_FIELD_WIDTH * BLOCK_WIDTH + PREVIEW_WINDOW_WIDTH;
 const int SCREEN_HEIGHT = GAME_FIELD_HEIGHT * BLOCK_HEIGHT;

@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 	}
 
    Game* game = new Game();
+   al_register_event_source(evQueue, game->getEventSource());
 
 	while(1) {
 		ALLEGRO_EVENT ev;
@@ -35,7 +36,7 @@ int main(int argc, char **argv)
 				redraw = true;
 			}
 		}
-		else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+		else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE || ev.type == ALLEGRO_GET_EVENT_TYPE('c', 'l', 'o', 's')) {
 			break;
 		}
  
@@ -47,14 +48,15 @@ int main(int argc, char **argv)
 		}
    }
  
-   al_destroy_timer(logicsTimer);
-   al_destroy_timer(graphicsTimer);
-   al_destroy_display(display);
-   al_destroy_event_queue(evQueue);
+	BitmapHandler::destroyBitmaps();
+	al_destroy_timer(logicsTimer);
+	al_destroy_timer(graphicsTimer);
+	al_destroy_display(display);
+	al_destroy_event_queue(evQueue);
 
-   delete game;
+	delete game;
  
-   return 0;
+	return 0;
 }
 
 
@@ -63,6 +65,7 @@ bool init() {
 	al_init();
 	al_init_image_addon();
 	al_install_keyboard();
+	BitmapHandler::loadBitmaps();
  
    display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
    if(!display) {
@@ -107,3 +110,4 @@ bool init() {
 
 	return true;
 }
+

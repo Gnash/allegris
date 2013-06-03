@@ -10,5 +10,8 @@ public:
 
 	bool updateGraphic(void);
 	bool updateLogic(void);
+
+private:
+	
 };
 

@@ -6,6 +6,10 @@ Block::Block(void) {
 }
 
 Block::~Block(void) {
+	vector<BlockPart*>::iterator it;
+	for (it = this->blockParts.begin(); it != this->blockParts.end(); it++){
+		delete *it;
+	}
 }
 
 bool Block::draw(void) {
