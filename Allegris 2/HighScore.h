@@ -1,5 +1,6 @@
 #pragma once
 #include "gamestate.h"
+#include "HighScoreList.h"
 class HighScore :
 	public GameState
 {
@@ -12,6 +13,8 @@ public:
 	bool updateLogic(void);
 
 private:
-	
+	const HighScoreList* const getHighScoreList(void);
+
+	HighScoreList* highScoreList;
 };
 

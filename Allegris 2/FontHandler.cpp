@@ -22,6 +22,7 @@ ALLEGRO_FONT* FontHandler::getFont(int index) {
 
 void FontHandler::loadFonts(void) {
 	fontVector.push_back(al_load_ttf_font("font/VideoTerminalScreen.ttf",30,0 ));
+	fontVector.push_back(al_load_ttf_font("font/VideoTerminalScreen.ttf",30,0 ));
 }
 
 void FontHandler::destroyFonts(void) {
