@@ -1,7 +1,7 @@
 #include "GameWindow.h"
 
 
-GameWindow::GameWindow(void) {
+GameWindow::GameWindow(void) : points(0) {
 	this->completedLines = 0;
 	this->activeBlock = 0;
 	this->level = 1;

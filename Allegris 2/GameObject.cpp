@@ -1,17 +1,15 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(int x, int y) {
-	this->setRelativeCoord(new Coordinate(x, y));
+GameObject::GameObject(int x, int y) : parent(0), myCoord(new Coordinate(x, y)) {
 }
 
-GameObject::GameObject(void) {
-
+GameObject::GameObject(void) : parent(0), myCoord(new Coordinate(0, 0)) {
 }
 
 
 GameObject::~GameObject(void) {
-
+	delete myCoord;
 }
 
 Coordinate* GameObject::getRelativeCoordinate(void) {

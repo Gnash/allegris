@@ -13,8 +13,8 @@ public:
 	bool updateLogic(void);
 
 private:
-	const HighScoreList* const getHighScoreList(void);
+	HighScoreList& getHighScoreList(void);
 
-	HighScoreList* highScoreList;
+	HighScoreList highScoreList;
 };
 

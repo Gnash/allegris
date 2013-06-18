@@ -2,12 +2,10 @@
 #include <sstream>
 
 
-HighScoreListPoints::HighScoreListPoints(int points)
-{
-	this->points = points;
-	this->font = FontHandler::getFont(FONT_INDEX_HIGHSCORE);
+HighScoreListPoints::HighScoreListPoints(int x, int y, int points) : points(points), font(FontHandler::getFont(FONT_INDEX_HIGHSCORE))
+{;
+	setRelativeCoord(new Coordinate(x, y));
 }
-
 
 HighScoreListPoints::~HighScoreListPoints(void)
 {

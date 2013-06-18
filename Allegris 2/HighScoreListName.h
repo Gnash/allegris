@@ -5,9 +5,12 @@ class HighScoreListName :
 	public GameObject
 {
 public:
-	HighScoreListName(void);
+	HighScoreListName(int x, int y, string name);
 	~HighScoreListName(void);
 
+	bool draw(void);
+
+private:
 	string name;
 };
 

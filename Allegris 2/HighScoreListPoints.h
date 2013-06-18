@@ -8,7 +8,7 @@ class HighScoreListPoints :
 	public GameObject
 {
 public:
-	HighScoreListPoints(int points);
+	HighScoreListPoints(int x, int y, int points);
 	~HighScoreListPoints(void);
 
 	bool draw(void);
