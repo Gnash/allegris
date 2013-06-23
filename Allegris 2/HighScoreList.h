@@ -6,12 +6,12 @@ class HighScoreList :
 	public GameObject
 {
 public:
-	HighScoreList(void);
+	HighScoreList(int x, int y);
 	~HighScoreList(void);
 
 	bool draw(void);
-	void addEntry(string name, int points);
+	HighScoreListEntry* addEntry(string name, int points);
 
 private:
-	vector<HighScoreListEntry> listEntries;
+	vector<HighScoreListEntry*> listEntries;
 };

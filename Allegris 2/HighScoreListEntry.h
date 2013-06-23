@@ -7,11 +7,18 @@ class HighScoreListEntry :
 {
 public:	
 	~HighScoreListEntry(void);
-	HighScoreListEntry(int x, int y, string name, int points);
+	HighScoreListEntry(int x, int y, int width, string name, int points);
 	bool draw(void) ;
+
+	string getName(void);
+	void setName(string newName);
+
+	void setActive(bool active);
 
 private:
 	HighScoreListName entryName;
 	HighScoreListPoints entryPoints;
+
+	bool active;
 };
 

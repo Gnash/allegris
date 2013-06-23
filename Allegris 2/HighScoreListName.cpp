@@ -16,3 +16,12 @@ bool HighScoreListName::draw(void) {
 	al_draw_text(this->font, al_map_rgb(0, 0, 200), getAbsoluteXPos(), getAbsoluteYPos(), ALLEGRO_ALIGN_LEFT, this->name.c_str());
 	return true;
 }
+
+
+string HighScoreListName::getName(void) {
+	return this->name;
+}
+
+void HighScoreListName::setName(string newName) {
+	this->name = newName;
+}

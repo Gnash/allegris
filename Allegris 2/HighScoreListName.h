@@ -12,6 +12,8 @@ public:
 	~HighScoreListName(void);
 
 	bool draw(void);
+	string getName(void);
+	void setName(string newName);
 
 private:
 	string name;

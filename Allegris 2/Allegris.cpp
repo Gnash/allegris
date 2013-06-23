@@ -1,4 +1,5 @@
 #include "Allegris.h"
+#include <allegro5/allegro_primitives.h>
 
 using namespace std;
 
@@ -68,6 +69,7 @@ bool init() {
 	al_install_keyboard();
 	al_init_font_addon();
 	al_init_ttf_addon();
+	al_init_primitives_addon();
 	BitmapHandler::loadBitmaps();
 	FontHandler::loadFonts();
  

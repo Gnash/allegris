@@ -1,11 +1,13 @@
 #pragma once
 #include "gamestate.h"
 #include "HighScoreList.h"
+
+class HighScoreListEntry;
+
 class HighScore :
 	public GameState
 {
 public:
-	HighScore(void);
 	HighScore(int points);
 	~HighScore(void);
 
@@ -14,7 +16,16 @@ public:
 
 private:
 	HighScoreList& getHighScoreList(void);
+	HighScoreList loadHighScoreList(string filePath);
+	void disableInput(string &name);
+	void handleNameInput(int inputUnicode, string &name);
+	void setUnderscoreVisibility(bool visibility, string &name);
 
+	HighScoreListEntry* newHighScore;
 	HighScoreList highScoreList;
+	bool inputMode;
+
+	ALLEGRO_TIMER* underscoreTimer;
+	bool underscoreVisible;
 };
 
