@@ -1,6 +1,9 @@
 #pragma once
 #include "gameobject.h"
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_font.h>
+#include "globals.h"
+#include "FontHandler.h"
 class HighScoreListName :
 	public GameObject
 {
@@ -12,5 +15,6 @@ public:
 
 private:
 	string name;
+	ALLEGRO_FONT* font;
 };
 

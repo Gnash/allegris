@@ -11,7 +11,6 @@ HighScoreList::~HighScoreList(void)
 }
 
 bool HighScoreList::draw(void) {
-	cout << listEntries.size() << endl;
 	vector<HighScoreListEntry>::iterator it(listEntries.begin());
 	for (it = this->listEntries.begin(); it != this->listEntries.end(); it++){
 		if (!(*it).draw()) {
