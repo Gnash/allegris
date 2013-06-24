@@ -8,12 +8,17 @@ int HIGHSCORE_MAX_NAME_LENGTH = 10;
 
 std::vector<std::string> explode(std::string const & s, char delim);
 
-HighScore::HighScore(int points) : inputMode(true), underscoreVisible(false), highScoreList(loadHighScoreList("highscore.txt")) {
+HighScore::HighScore(int points) : inputMode(true), underscoreVisible(false), highScoreList(HIGHSCORE_MARGIN_LEFT, HIGHSCORE_MARGIN_TOP) {
+	loadHighScoreList(highScoreList, "highscore.txt");
 	underscoreTimer = al_create_timer(0.5);
 	al_register_event_source(getEventQueue(), al_get_timer_event_source(underscoreTimer));
 	al_register_event_source(getEventQueue(), al_get_keyboard_event_source());
 	newHighScore = highScoreList.addEntry("", points);
-	al_start_timer(underscoreTimer);
+	if (newHighScore == 0) {
+		inputMode = false;
+	} else {
+		al_start_timer(underscoreTimer);
+	}
 }
 
 HighScore::~HighScore(void)
@@ -39,6 +44,7 @@ bool HighScore::updateLogic(void) {
 				if (ev.any.source == al_get_timer_event_source(underscoreTimer)) {
 					setUnderscoreVisibility(!underscoreVisible, name);
 				}
+
 			}
 
 			if (ev.type == ALLEGRO_EVENT_KEY_CHAR) {
@@ -95,8 +101,7 @@ void HighScore::setUnderscoreVisibility(bool visibility, string &name) {
 }
 
 
-HighScoreList HighScore::loadHighScoreList(string filePath) {
-	HighScoreList result = HighScoreList(HIGHSCORE_MARGIN_LEFT, HIGHSCORE_MARGIN_TOP);
+void HighScore::loadHighScoreList(HighScoreList& list, string filePath) {
 	ifstream highScoreFile;
 	highScoreFile.open(filePath);
 	if (highScoreFile.is_open()) {
@@ -115,11 +120,10 @@ HighScoreList HighScore::loadHighScoreList(string filePath) {
 				}
 				stringstream ss(entry.at(1));
 				ss >> points;
-				result.addEntry(name, points);
+				list.addEntry(name, points);
 			}
 		}
 	}
-	return result;
 }
 
 std::vector<std::string> explode(std::string const & s, char delim)

@@ -12,6 +12,7 @@ public:
 
 	string getName(void);
 	void setName(string newName);
+	int getPoints(void);
 
 	void setActive(bool active);
 

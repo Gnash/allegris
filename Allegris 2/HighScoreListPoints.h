@@ -12,6 +12,7 @@ public:
 	~HighScoreListPoints(void);
 
 	bool draw(void);
+	int getPoints(void);
 
 private:
 	int points;

@@ -3,7 +3,7 @@
 
 
 HighScoreListEntry::HighScoreListEntry(int x, int y, int width, string name, int points) 
-		: entryName(x + 10, y + 10, name), entryPoints(x + width - 10, y + 10, points) {
+		: entryName(10, 10, name), entryPoints(width - 10, 10, points) {
 	entryName.setParent(this);
 	entryPoints.setParent(this);
 	this->setRelativeCoord(new Coordinate(x, y));
@@ -38,4 +38,8 @@ void HighScoreListEntry::setName(string newName) {
 
 void HighScoreListEntry::setActive(bool active) {
 	this->active = active;
+}
+
+int HighScoreListEntry::getPoints(void) {
+	return entryPoints.getPoints();
 }

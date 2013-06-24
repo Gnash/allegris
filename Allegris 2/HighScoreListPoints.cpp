@@ -19,3 +19,7 @@ bool HighScoreListPoints::draw(void) {
 	al_draw_text(this->font, al_map_rgb(0, 0, 200), getAbsoluteXPos(), getAbsoluteYPos(), ALLEGRO_ALIGN_RIGHT, str.c_str());
 	return true;
 }
+
+int HighScoreListPoints::getPoints(void) {
+	return this->points;
+}
