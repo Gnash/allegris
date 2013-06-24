@@ -66,9 +66,10 @@ HighScoreListEntry* HighScoreList::addEntry(string name, int points) {
 					listEntries.pop_back();
 				}
 				result = entry;
+				break;
 			}
 		}
-		if (points < (*it)->getPoints() && listEntries.size() < HIGHSCORE_LIST_LENGTH) {
+		if (result == 0 && points < (*it)->getPoints() && listEntries.size() < HIGHSCORE_LIST_LENGTH) {
 			listEntries.push_back(entry);
 			result = entry;
 		}
