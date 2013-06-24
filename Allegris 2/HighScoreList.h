@@ -11,6 +11,8 @@ public:
 
 	bool draw(void);
 	HighScoreListEntry* addEntry(string name, int points);
+	HighScoreListEntry* getEntry(int index);
+	int size(void);
 
 private:
 	vector<HighScoreListEntry*> listEntries;

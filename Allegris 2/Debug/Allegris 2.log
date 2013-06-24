@@ -1,11 +1,16 @@
-﻿Der Buildvorgang wurde am 07.06.2013 16:55:11 gestartet.
-     1>Projekt "E:\Code\C++\allegris\Allegris 2\Allegris 2.vcxproj" auf Knoten "2", Build Ziel(e).
-     1>ClCompile:
-         E:\Programme\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Ic:/allegro/include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt FontHandler.cpp
-         FontHandler.cpp
-     1>e:\code\c++\allegris\allegris 2\fonthandler.cpp(16): warning C4018: '>=': Konflikt zwischen 'signed' und 'unsigned'
+﻿Der Buildvorgang wurde am 24.06.2013 18:59:29 gestartet.
+     1>Projekt "F:\Code\C++\Allegris 2\Allegris 2\Allegris 2.vcxproj" auf Knoten "2", Build Ziel(e).
+     1>InitializeBuildStatus:
+         "Debug\Allegris 2.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       ClCompile:
+         D:\Programme\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Ic:/allegro/include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt HighScore.cpp
+     1>cl : Befehlszeile warning D9028: Fehler beim minimalen Neukompilieren, normale Erstellung wird durchgeführt.
+         HighScore.cpp
+     1>f:\code\c++\allegris 2\allegris 2\highscore.cpp(88): warning C4018: '<': Konflikt zwischen 'signed' und 'unsigned'
+       ResourceCompile:
+         Alle Ausgaben sind aktuell.
        Link:
-         E:\Programme\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Code\C++\allegris\Debug\Allegris 2.exe" /INCREMENTAL /NOLOGO /LIBPATH:c:/allegro/lib "allegro-5.0.6-monolith-md-debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Code\C++\allegris\Debug\Allegris 2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Code\C++\allegris\Debug\Allegris 2.lib" /MACHINE:X86 "Debug\Allegris 2.res"
+         D:\Programme\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Code\C++\Allegris 2\Debug\Allegris 2.exe" /INCREMENTAL /NOLOGO /LIBPATH:c:/allegro/lib "allegro-5.0.6-monolith-md-debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Code\C++\Allegris 2\Debug\Allegris 2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Code\C++\Allegris 2\Debug\Allegris 2.lib" /MACHINE:X86 "Debug\Allegris 2.res"
          Debug\Allegris.obj
          Debug\BitmapHandler.obj
          Debug\Block.obj
@@ -47,9 +52,12 @@
          Debug\PlayingField.obj
          Debug\PreviewWindow.obj
          Debug\PreviewWindowGraphics.obj
-         Allegris 2.vcxproj -> E:\Code\C++\allegris\Debug\Allegris 2.exe
-     1>Die Erstellung des Projekts "E:\Code\C++\allegris\Allegris 2\Allegris 2.vcxproj" ist abgeschlossen, Build Ziel(e).
+         Allegris 2.vcxproj -> F:\Code\C++\Allegris 2\Debug\Allegris 2.exe
+       FinalizeBuildStatus:
+         Die Datei "Debug\Allegris 2.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\Allegris 2.lastbuildstate".
+     1>Die Erstellung des Projekts "F:\Code\C++\Allegris 2\Allegris 2\Allegris 2.vcxproj" ist abgeschlossen, Build Ziel(e).
 
 Build erfolgreich.
 
-Verstrichene Zeit 00:00:10.51
+Verstrichene Zeit 00:00:02.31

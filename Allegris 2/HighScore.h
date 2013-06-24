@@ -17,6 +17,7 @@ public:
 private:
 	HighScoreList& getHighScoreList(void);
 	void loadHighScoreList(HighScoreList& list, string filePath);
+	void saveHighScoreList(HighScoreList& list, string filePath);
 	void disableInput(string &name);
 	void handleNameInput(int inputUnicode, string &name);
 	void setUnderscoreVisibility(bool visibility, string &name);

@@ -50,7 +50,13 @@ bool HighScore::updateLogic(void) {
 			if (ev.type == ALLEGRO_EVENT_KEY_CHAR) {
 				switch (ev.keyboard.keycode) {
 					case ALLEGRO_KEY_BACKSPACE:
-						name.pop_back();
+						if (underscoreVisible && name.size() > 1) {
+							name.pop_back();
+							name.pop_back();
+							name += "_";
+						} else if (!underscoreVisible && name.size() > 0) {
+							name.pop_back();
+						}
 						break;
 					case ALLEGRO_KEY_ENTER:
 						disableInput(name);
@@ -75,6 +81,7 @@ void HighScore::disableInput(string &name) {
 	inputMode = false;
 	setUnderscoreVisibility(false, name);
 	al_stop_timer(underscoreTimer);
+	saveHighScoreList(highScoreList, "highscore.txt");
 }
 
 void HighScore::handleNameInput(int inputUnicode, string &name) {
@@ -90,14 +97,15 @@ void HighScore::handleNameInput(int inputUnicode, string &name) {
 }
 
 void HighScore::setUnderscoreVisibility(bool visibility, string &name) {
-	this->underscoreVisible = visibility;
-	if (underscoreVisible) {
+	if (!underscoreVisible && visibility) {
 		name += "_";
 		HIGHSCORE_MAX_NAME_LENGTH++;
-	} else {
+	} else if (underscoreVisible && !visibility) {
 		name.pop_back();
 		HIGHSCORE_MAX_NAME_LENGTH--;
 	}
+	
+	this->underscoreVisible = visibility;
 }
 
 
@@ -124,6 +132,18 @@ void HighScore::loadHighScoreList(HighScoreList& list, string filePath) {
 			}
 		}
 	}
+	highScoreFile.close();
+}
+
+void HighScore::saveHighScoreList(HighScoreList& list, string filePath) {
+	ofstream highScoreFile(filePath);
+	for (int i = 0; i < list.size(); i++) {
+		HighScoreListEntry* entry = list.getEntry(i);
+		if (entry != 0) {
+			highScoreFile << entry->getName() << ";" << entry->getPoints() << endl;
+		}
+	}
+	highScoreFile.close();
 }
 
 std::vector<std::string> explode(std::string const & s, char delim)

@@ -22,6 +22,19 @@ bool HighScoreList::draw(void) {
 	return true;
 }
 
+
+int HighScoreList::size(void) {
+	return listEntries.size();
+}
+
+HighScoreListEntry* HighScoreList::getEntry(int index) {
+	if (index >= 0 && index < listEntries.size()) {
+		return listEntries.at(index);
+	} else {
+		return 0;
+	}
+}
+
 HighScoreListEntry* HighScoreList::addEntry(string name, int points) {
 	HighScoreListEntry* entry = (new HighScoreListEntry(0, listEntries.size() * HIGHSCORE_LIST_ENTRY_HEIGHT, HIGHSCORE_LIST_WIDTH, name, points));
 	vector<HighScoreListEntry*>::iterator it(listEntries.begin());
@@ -45,6 +58,7 @@ HighScoreListEntry* HighScoreList::addEntry(string name, int points) {
 		}
 		result = entry;
 	} else {
+		it = this->listEntries.begin();
 		for (it = this->listEntries.begin(); it != this->listEntries.end() - 1; it++){
 			if (points < (*it)->getPoints() && points >= (*(it+1))->getPoints()) {
 				listEntries.insert(it + 1, entry);
