@@ -14,6 +14,7 @@ public:
 private:
 	void emitGameStartEvent(void);
 	void emitCloseEvent(void);
+	void emitHighScoreEvent(void);
 	void selectMenuItem(void);
 	MenuItemList* getMenuItemList(void);
 	MenuItemList* menuItemList;

@@ -6,7 +6,8 @@ GameMenu::GameMenu(void)
 	al_register_event_source(getEventQueue(), al_get_keyboard_event_source());
 	this->menuItemList = new MenuItemList();
 	getMenuItemList()->addMenuItem(new MenuItem(getMenuItemList(), "Spiel starten", 0));
-	getMenuItemList()->addMenuItem(new MenuItem(getMenuItemList(), "Beenden", 1));
+	getMenuItemList()->addMenuItem(new MenuItem(getMenuItemList(), "Bestenliste", 1));
+	getMenuItemList()->addMenuItem(new MenuItem(getMenuItemList(), "Beenden", 2));
 }
 
 
@@ -48,10 +49,19 @@ void GameMenu::selectMenuItem(void) {
 	case MENU_START:
 		emitGameStartEvent();
 		break;
+	case MENU_HIGHSCORE:
+		emitHighScoreEvent();
+		break;
 	case MENU_END:
 		emitCloseEvent();
 		break;
 	}
+}
+
+void GameMenu::emitHighScoreEvent(void) {
+	ALLEGRO_EVENT ev;
+	ev.type = ALLEGRO_GET_EVENT_TYPE('h', 'i', 'g', 'h');
+	al_emit_user_event(getEventSource(), &ev, 0);
 }
 
 void GameMenu::emitGameStartEvent(void) {

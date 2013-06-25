@@ -29,6 +29,10 @@ bool Game::updateLogic(void) {
 			setCurrentState(new GameWindow());
 		} else if (ev.type == ALLEGRO_GET_EVENT_TYPE('c', 'l', 'o', 's')) {
 			emitCloseEvent();
+		} else if (ev.type == ALLEGRO_GET_EVENT_TYPE('h', 'i', 'g', 'h')) {
+			setCurrentState(new HighScore());
+		} else if (ev.type == ALLEGRO_GET_EVENT_TYPE('m', 'e', 'n', 'u')) {
+			setCurrentState(new GameMenu());
 		}
 	}
 	return currentState->updateLogic();

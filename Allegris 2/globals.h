@@ -40,7 +40,8 @@ const int DIRECTION_UP = 3;
 const int MENU_ITEM_HEIGHT = 50;
 
 const int MENU_START = 0;
-const int MENU_END = 1;
+const int MENU_HIGHSCORE = 1;
+const int MENU_END = 2;
 
 const int SCREEN_WIDTH = GAME_FIELD_WIDTH * BLOCK_WIDTH + PREVIEW_WINDOW_WIDTH;
 const int SCREEN_HEIGHT = GAME_FIELD_HEIGHT * BLOCK_HEIGHT;

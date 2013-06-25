@@ -8,6 +8,7 @@ class HighScore :
 	public GameState
 {
 public:
+	HighScore(void);
 	HighScore(int points);
 	~HighScore(void);
 
@@ -21,11 +22,13 @@ private:
 	void disableInput(string &name);
 	void handleNameInput(int inputUnicode, string &name);
 	void setUnderscoreVisibility(bool visibility, string &name);
+	void emitMainMenuEvent(void);
 
 	HighScoreListEntry* newHighScore;
 	HighScoreList highScoreList;
 	bool inputMode;
-
+	
+	ALLEGRO_FONT* font;
 	ALLEGRO_TIMER* underscoreTimer;
 	bool underscoreVisible;
 };

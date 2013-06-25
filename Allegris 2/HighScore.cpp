@@ -3,12 +3,23 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro.h>
 
 int HIGHSCORE_MAX_NAME_LENGTH = 10;
 
+const string RETURN_TEXT = ">>Zurueck zum Menue<<";
+
 std::vector<std::string> explode(std::string const & s, char delim);
 
-HighScore::HighScore(int points) : inputMode(true), underscoreVisible(false), highScoreList(HIGHSCORE_MARGIN_LEFT, HIGHSCORE_MARGIN_TOP) {
+
+HighScore::HighScore(void) : inputMode(false), underscoreVisible(false), highScoreList(HIGHSCORE_MARGIN_LEFT, HIGHSCORE_MARGIN_TOP), font(FontHandler::getFont(FONT_INDEX_HIGHSCORE)) {
+	loadHighScoreList(highScoreList, "highscore.txt");
+	underscoreTimer = al_create_timer(0.5);
+	al_register_event_source(getEventQueue(), al_get_keyboard_event_source());
+}
+
+HighScore::HighScore(int points) : inputMode(true), underscoreVisible(false), highScoreList(HIGHSCORE_MARGIN_LEFT, HIGHSCORE_MARGIN_TOP), font(FontHandler::getFont(FONT_INDEX_HIGHSCORE)) {
 	loadHighScoreList(highScoreList, "highscore.txt");
 	underscoreTimer = al_create_timer(0.5);
 	al_register_event_source(getEventQueue(), al_get_timer_event_source(underscoreTimer));
@@ -30,6 +41,9 @@ HighScore::~HighScore(void)
 bool HighScore::updateGraphic(void) {
 	al_clear_to_color(al_map_rgb(10, 0, 0));
 	getHighScoreList().draw();
+	if (!inputMode) {
+		al_draw_text(this->font, al_map_rgb(0, 0, 200), SCREEN_WIDTH / 2, SCREEN_HEIGHT - 50, ALLEGRO_ALIGN_CENTRE, RETURN_TEXT.c_str());
+	}
 	return true;
 }
 
@@ -68,8 +82,29 @@ bool HighScore::updateLogic(void) {
 			}
 		newHighScore->setName(name);
 		}
+	} else {
+		ALLEGRO_EVENT ev;
+		while (!al_event_queue_is_empty(getEventQueue())) {
+			al_wait_for_event(getEventQueue(), &ev);
+
+			if (ev.type == ALLEGRO_EVENT_KEY_CHAR) {
+				switch (ev.keyboard.keycode) {
+				
+					case ALLEGRO_KEY_ENTER:
+						emitMainMenuEvent();
+						break;
+				}
+			}
+		}
 	}
 	return true;
+}
+
+
+void HighScore::emitMainMenuEvent(void) {
+	ALLEGRO_EVENT ev;
+	ev.type = ALLEGRO_GET_EVENT_TYPE('m', 'e', 'n', 'u');
+	al_emit_user_event(getEventSource(), &ev, 0);
 }
 
 HighScoreList& HighScore::getHighScoreList(void) {
