@@ -13,8 +13,8 @@ public:
 
 private:
 	PreviewWindow previewWindow;
-	InfoBox currentPoints;
-	InfoBox currentLevel;
+	InfoBox pointsBox;
+	InfoBox levelBox;
 	int& currentLevel;
 	int& currentPoints;
 };

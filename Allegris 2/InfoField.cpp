@@ -3,11 +3,16 @@
 #include "FontHandler.h"
 
 
-InfoField::InfoField(int x, int y, int& level, int& points): previewWindow((INFO_WINDOW_WIDTH - PREVIEW_WINDOW_WIDTH) / 2, (INFO_WINDOW_WIDTH - PREVIEW_WINDOW_WIDTH) / 2)
+InfoField::InfoField(int x, int y, int& level, int& points): previewWindow((INFO_WINDOW_WIDTH - PREVIEW_WINDOW_WIDTH) / 2, (INFO_WINDOW_WIDTH - PREVIEW_WINDOW_WIDTH) / 2), 
+	currentLevel(level), 
+	currentPoints(points),
+	pointsBox(INFO_WINDOW_WIDTH / 2, PREVIEW_WINDOW_HEIGHT + 100, "Punkte:", points, FontHandler::getFont(0)),
+	levelBox(INFO_WINDOW_WIDTH / 2, PREVIEW_WINDOW_HEIGHT + 200, "Level:", level, FontHandler::getFont(0))
 {
 	this->setRelativeCoord(new Coordinate(x, y));
 	previewWindow.setParent(this);
-	//TODO BLAAA
+	pointsBox.setParent(this);
+	levelBox.setParent(this);
 }
 
 
@@ -26,5 +31,7 @@ bool InfoField::draw(void) {
 	int y = getAbsoluteYPos();
 	al_draw_filled_rectangle(x, y, x + INFO_WINDOW_WIDTH, y + SCREEN_HEIGHT, al_map_rgb(20, 0, 20));
 	previewWindow.draw();
+	pointsBox.draw();
+	levelBox.draw();
 	return true;
 }

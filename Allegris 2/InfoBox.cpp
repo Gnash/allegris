@@ -16,10 +16,11 @@ InfoBox::~InfoBox(void)
 bool InfoBox::draw(void) {
 	int x = getAbsoluteXPos();
 	int y = getAbsoluteYPos();
-	al_draw_text(font, al_map_rgb(200, 200, 200), x, y, 0, text.c_str());
+	al_draw_text(font, al_map_rgb(200, 200, 200), x, y, ALLEGRO_ALIGN_CENTRE, text.c_str());
 	ostringstream ss;
-	ss << text;
+	ss << number;
 	string str = ss.str();
 	int height = al_get_font_line_height(font);
-	al_draw_text(this->font, al_map_rgb(200, 200, 200), x, y + height, ALLEGRO_ALIGN_RIGHT, str.c_str());	
+	al_draw_text(this->font, al_map_rgb(200, 200, 200), x, y + height, ALLEGRO_ALIGN_CENTRE, str.c_str());	
+	return true;
 }

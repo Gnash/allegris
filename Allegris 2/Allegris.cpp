@@ -4,8 +4,8 @@
 using namespace std;
 
 
-const float FPS = 60;
-const float LPS = 60;
+const float FPS = 20;
+const float LPS = 20;
 
 ALLEGRO_DISPLAY *display;
 ALLEGRO_EVENT_QUEUE *evQueue;

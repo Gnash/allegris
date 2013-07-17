@@ -1,7 +1,7 @@
 #include "GameWindow.h"
 
 
-GameWindow::GameWindow(void) : points(0), infoField(INFO_WINDOW_X, 0) {
+GameWindow::GameWindow(void) : points(0), infoField(INFO_WINDOW_X, 0, level, points) {
 	this->completedLines = 0;
 	this->activeBlock = 0;
 	this->level = 1;
