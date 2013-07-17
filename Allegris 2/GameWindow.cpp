@@ -1,13 +1,12 @@
 #include "GameWindow.h"
 
 
-GameWindow::GameWindow(void) : points(0) {
+GameWindow::GameWindow(void) : points(0), infoField(INFO_WINDOW_X, 0) {
 	this->completedLines = 0;
 	this->activeBlock = 0;
 	this->level = 1;
 	this->blockMovesPerSecond = 1;
 	this->playingField = new PlayingField(0, 0);
-	this->previewWindow = new PreviewWindow(PREVIEW_WINDOW_X, PREVIEW_WINDOW_Y);
 	this->blockMovingDown = false;
 	this->blockFactory = new BlockFactory();
 	createNewBlock();
@@ -23,14 +22,13 @@ GameWindow::GameWindow(void) : points(0) {
 GameWindow::~GameWindow(void) {
 	delete this->activeBlock;
 	delete this->playingField;
-	delete this->previewWindow;
 	al_destroy_timer(getBlockDropTimer());
 }
 
 
 bool GameWindow::updateGraphic(void) {
 	getPlayingField()->draw();
-	return (this->activeBlock->draw() && previewWindow->draw());
+	return (this->activeBlock->draw() && infoField.draw());
 }
 
 bool GameWindow::updateLogic(void) {
@@ -78,11 +76,11 @@ void GameWindow::createNewBlock(void) {
 	if (this->activeBlock) {
 		delete this->activeBlock;
 	}
-	if (getPreviewWindow()->getNextBlock()) {
-		this->activeBlock = getPreviewWindow()->getNextBlock();
+	PreviewWindow* previewWindow = &(infoField.getPreviewWindow());
+	if (previewWindow->getNextBlock()) {
+		this->activeBlock = previewWindow->getNextBlock();
 		this->activeBlock->setParent(getPlayingField());
 		this->activeBlock->setRelativeCoordinate(BLOCK_SPAWN_X, BLOCK_SPAWN_Y);
-
 	} else {
 		this->activeBlock = blockFactory->createRandomBlock();
 	}
@@ -91,7 +89,7 @@ void GameWindow::createNewBlock(void) {
 	nextBlock->setRelativeCoordinate(floor((PREVIEW_WINDOW_WIDTH - nextBlock->getWidth() * BLOCK_WIDTH) / 2), floor(((PREVIEW_WINDOW_HEIGHT - nextBlock->getHeight() * BLOCK_HEIGHT) / 2)));
 	int bla = nextBlock->getAbsoluteXPos();
 	int blubb = nextBlock->getAbsoluteYPos();
-	getPreviewWindow()->setNextBlock(nextBlock);
+	previewWindow->setNextBlock(nextBlock);
 	this->activeBlock->setPlayingField(getPlayingField());
 }
 
@@ -181,9 +179,6 @@ void GameWindow::increaseLevel(void) {
 	createNewBlockTimer();
 }
 
-PreviewWindow* GameWindow::getPreviewWindow(void) {
-	return this->previewWindow;
-}
 
 bool GameWindow::isSpawnBlocked(void) {
 	return getPlayingField()->isBlocked(BLOCK_SPAWN_X, 0);

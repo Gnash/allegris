@@ -25,7 +25,6 @@ bool PreviewWindowGraphics::draw(void) {
 	al_draw_filled_rectangle(x, y, x + PREVIEW_WINDOW_WIDTH, y + SCREEN_HEIGHT, al_map_rgb(20, 40, 20));
 	al_draw_bitmap(backgroundImage, x, y, 0);
 	success = success && getPreviewWindow()->getNextBlock()->draw();
-	int bla = SCREEN_WIDTH;
 	return success;
 }
 

@@ -7,6 +7,7 @@
 #include "globals.h"
 #include "PreviewWindow.h"
 #include <allegro5/allegro.h>
+#include "InfoField.h"
 
 
 class GameWindow :
@@ -31,7 +32,6 @@ private:
 	int getCompletedLines(void);
 	int getCurrentDirection(void);
 	int getBlockMovesPerSecond(void);
-	PreviewWindow* getPreviewWindow(void);
 	ALLEGRO_TIMER* getBlockDropTimer(void);
 	ALLEGRO_TIMER* getBlockInputTimer(void);
 	PlayingField* getPlayingField(void);
@@ -46,7 +46,7 @@ private:
 	Block* activeBlock;
 	BlockFactory* blockFactory;
 	PlayingField* playingField;
-	PreviewWindow* previewWindow;
+	InfoField infoField;
 	ALLEGRO_TIMER *blockDropTimer;
 	ALLEGRO_TIMER *blockInputTimer;
 	

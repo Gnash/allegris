@@ -16,6 +16,5 @@ public:
 
 private:
 	Block* nextBlock;
-	PreviewWindowGraphics* graphics;
 };
 

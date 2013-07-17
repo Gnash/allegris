@@ -104,14 +104,14 @@
     <ClInclude Include="HighScoreListEntry.h" />
     <ClInclude Include="HighScoreListName.h" />
     <ClInclude Include="HighScoreListPoints.h" />
+    <ClInclude Include="InfoBox.h" />
+    <ClInclude Include="InfoField.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="MenuItemList.h" />
     <ClInclude Include="ObjectComponent.h" />
-    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayingField.h" />
     <ClInclude Include="PreviewWindow.h" />
-    <ClInclude Include="PreviewWindowGraphics.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -151,14 +151,14 @@
     <ClCompile Include="HighScoreListEntry.cpp" />
     <ClCompile Include="HighScoreListName.cpp" />
     <ClCompile Include="HighScoreListPoints.cpp" />
+    <ClCompile Include="InfoBox.cpp" />
+    <ClCompile Include="InfoField.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="MenuItemList.cpp" />
     <ClCompile Include="ObjectComponent.cpp" />
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayingField.cpp" />
     <ClCompile Include="PreviewWindow.cpp" />
-    <ClCompile Include="PreviewWindowGraphics.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

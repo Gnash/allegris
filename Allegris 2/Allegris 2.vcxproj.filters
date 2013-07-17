@@ -19,6 +19,21 @@
     <Filter Include="Headerdateien\GameStates">
       <UniqueIdentifier>{2effc5dd-675d-497a-917f-a49d6dca4674}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Quelldateien\Highscore">
+      <UniqueIdentifier>{f6aa67dd-bcf7-4eee-857a-cc46a8607ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Game Window">
+      <UniqueIdentifier>{ca8267f0-f52e-4f67-9167-66fa9b924526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Game Window\Blocks">
+      <UniqueIdentifier>{fb899bd7-8c99-46a8-b884-8a2bda06d60b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Menu">
+      <UniqueIdentifier>{36023a80-4a32-4b0c-bb5f-1ca2c870d75c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Base Classes">
+      <UniqueIdentifier>{d4ba9b28-f014-46ab-976d-f8d37e8ec707}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -28,9 +43,6 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Allegris.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
@@ -55,9 +67,6 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="PreviewWindow.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="PreviewWindowGraphics.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="BlockPartGraphics_Yellow.h">
@@ -150,6 +159,12 @@
     <ClInclude Include="FontHandler.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="InfoField.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoBox.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Allegris 2.rc">
@@ -163,121 +178,121 @@
     <ClCompile Include="Allegris.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockLine.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPart.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Coordinate.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMenu.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="HighScore.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectComponent.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPartGraphics.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicsComponent.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block_L.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockFactory.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayingField.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block_O.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block_L_Mirrored.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block_S.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block_S_Mirrored.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block_I.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Block_T.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPartGraphics_Red.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPartGraphics_Blue.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPartGraphics_Green.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPartGraphics_Yellow.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPartGraphics_Cyan.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockPartGraphics_Magenta.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="PreviewWindow.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="PreviewWindowGraphics.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuItemList.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuItem.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="BitmapHandler.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="HighScoreList.cpp">
+    <ClCompile Include="FontHandler.cpp">
       <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPartGraphics_Yellow.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_I.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_L.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_L_Mirrored.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_O.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_S.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_S_Mirrored.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_T.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockFactory.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockLine.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPart.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPartGraphics.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPartGraphics_Blue.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPartGraphics_Cyan.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPartGraphics_Green.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPartGraphics_Magenta.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPartGraphics_Red.cpp">
+      <Filter>Quelldateien\Game Window\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="HighScore.cpp">
+      <Filter>Quelldateien\Highscore</Filter>
+    </ClCompile>
+    <ClCompile Include="HighScoreList.cpp">
+      <Filter>Quelldateien\Highscore</Filter>
     </ClCompile>
     <ClCompile Include="HighScoreListEntry.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\Highscore</Filter>
     </ClCompile>
     <ClCompile Include="HighScoreListName.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\Highscore</Filter>
     </ClCompile>
     <ClCompile Include="HighScoreListPoints.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\Highscore</Filter>
     </ClCompile>
-    <ClCompile Include="FontHandler.cpp">
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>Quelldateien\Game Window</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewWindow.cpp">
+      <Filter>Quelldateien\Game Window</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayingField.cpp">
+      <Filter>Quelldateien\Game Window</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItemList.cpp">
+      <Filter>Quelldateien\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItem.cpp">
+      <Filter>Quelldateien\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenu.cpp">
+      <Filter>Quelldateien\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Quelldateien\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Quelldateien\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsComponent.cpp">
+      <Filter>Quelldateien\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectComponent.cpp">
+      <Filter>Quelldateien\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Coordinate.cpp">
+      <Filter>Quelldateien\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoField.cpp">
+      <Filter>Quelldateien\Game Window</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoBox.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
